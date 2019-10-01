@@ -3,9 +3,6 @@
   <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="36" y="120" id="pf15699237699810" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15699237699811 pf15699237699812" path="/index.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="listado.xhtml" x="192" y="12" id="pf15699237699813" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15699237699811" path="/listado.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="altaForm.xhtml" x="228" y="216" id="pf15699237699974" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf15699237699812" path="/altaForm.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="*" x="516" y="120" id="pf15699247263420" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15699247263421" path="*"/>
-  <nodes xsi:type="pageflow:PFPage" name="error.xhtml" x="307" y="120" id="pf15699247263422" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf15699247263421" path="/error.xhtml"/>
   <links id="pf15699237699811" target="pf15699237699813" source="pf15699237699810" outcome="exito" fromaction="#{controller.listado}"/>
   <links id="pf15699237699812" target="pf15699237699974" source="pf15699237699810" outcome="alta"/>
-  <links id="pf15699247263421" target="pf15699247263422" source="pf15699247263420" outcome="error"/>
 </pageflow:Pageflow>
