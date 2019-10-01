@@ -74,19 +74,33 @@ public class BeanAlumnos implements Serializable{
 			// Acceso a la implementacion de la capa de negocio
 			// a través de la factoría
 			service = Factories.services.createAlumnosService();
-					//Salvamos o actualizamos el alumno segun sea una operacion de alta o de edición
-					if (alumno.getId() == null) {
-						service.saveAlumno(alumno);
-					}
-					else {
-						service.updateAlumno(alumno);
-					}
+			//Salvamos o actualizamos el alumno segun sea una operacion de alta o de edición
+			if (alumno.getId() == null) {
+				service.saveAlumno(alumno);
+			}
+			else {
+				service.updateAlumno(alumno);
+			}
 			//Actualizamos el javabean de alumnos inyectado en la tabla
 			alumnos = (Alumno [])service.getAlumnos().toArray(new Alumno[0]);
 			return "exito";
 		} catch (Exception e) {
 			e.printStackTrace();
 			return "error";
+		}
+	}
+	public String baja() {
+		AlumnosService service;
+		try {
+			// Acceso a la implementacion de la capa de negocio
+			// a través de la factoría
+			service = Factories.services.createAlumnosService();
+			service.deleteAlumno(alumno.getId());
+			return "exito";
+		}
+		catch(Exception e){
+		e.printStackTrace();
+		return "error";
 		}
 	}
 }

@@ -36,7 +36,7 @@ public class SimpleAlumnosService implements AlumnosService {
 
 	@Override
 	public void deleteAlumno(Long id) throws EntityNotFoundException {
-		new AlumnosBaja().delete(id);
+		new AlumnosBaja().delete(id);	
 	}
 
 	@Override
