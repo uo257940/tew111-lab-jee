@@ -8,14 +8,15 @@
 </h:head>
 <h:body>
 
-<navigation-rule>
- <from-view-id>/altaForm.xhtml</from-view-id>
- <navigation-case>
-<from-action>#{controller.salva}</from-action>
- <from-outcome>exito</from-outcome>
- <to-view-id>/listado.xhtml</to-view-id>
- </navigation-case>
- </navigation-rule>
- 
+<h:form>
+<h:panelGrid columns="2">
+ NOMBRE: <h:inputText value="#{controller.alumno.nombre}"/>
+ APELLIDOS: <h:inputText value="#{controller.alumno.apellidos}"/>
+ USERID: <h:inputText value="#{controller.alumno.iduser}"/>
+ EMAIL: <h:inputText value="#{controller.alumno.email}"/>
+</h:panelGrid>
+ <h:commandButton value="Salvar" action="#{controller.salva}"/>
+</h:form>
+
 </h:body>
 </html>
