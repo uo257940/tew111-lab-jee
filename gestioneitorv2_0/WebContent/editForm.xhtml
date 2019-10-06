@@ -1,24 +1,43 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-       xmlns:f="http://java.sun.com/jsf/core"
-        xmlns:p="http://primefaces.org/ui">
-<h:head>
-<title>Cabecera</title> 
-</h:head>
-<h:body>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<f:view locale="#{settings.locale}">
 
-<!-- Aqu� va tu c�digo -->
-<h:form>
-<p:panelGrid columns="2">
-  NOMBRE:     <p:inputText value="#{controller.alumno.nombre}"/>
-  APELLIDOS:  <p:inputText value="#{controller.alumno.apellidos}"/>
-  USERID:     <p:inputText value="#{controller.alumno.iduser}"/>
-  EMAIL:      <p:inputText value="#{controller.alumno.email}"/>
-</p:panelGrid>
-  <h:commandButton value="Salvar" action="#{controller.salva}"/>
-</h:form>
+	<h:head>
+		<title>#{msgs.tituloOperacionEdicion}</title>
+	</h:head>
+	<h:body>
 
-</h:body>
+		<!-- Aqu� va tu c�digo -->
+		<h:form>
+			<p:menubar>
+					<p:menuitem action="#{controller.volver}"
+						value="#{msgs.enlaceCasa}" immediate="true">
+					</p:menuitem>
+				<f:facet name="options">
+					<h:commandLink value="#{msgs.enlaceIdiomaES} "
+						actionListener="#{settings.setSpanish}">
+					</h:commandLink>
+					<h:commandLink value="#{msgs.enlaceIdiomaEN}"
+						actionListener="#{settings.setEnglish}">
+					</h:commandLink>
+				</f:facet>
+			</p:menubar>
+
+			<p:panelGrid columns="2">
+  #{msgs.nombre}    <p:inputText value="#{controller.alumno.nombre}" />
+  #{msgs.apellidos} <p:inputText value="#{controller.alumno.apellidos}" />
+  #{msgs.userid}     <p:inputText value="#{controller.alumno.iduser}" />
+  #{msgs.correo}    <p:inputText value="#{controller.alumno.email}" />
+			</p:panelGrid>
+			<h:commandButton value="#{msgs.botonSalvar}"
+				action="#{controller.salva}" />
+		</h:form>
+
+	</h:body>
+</f:view>
+
 </html>
