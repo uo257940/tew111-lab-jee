@@ -65,12 +65,13 @@ private Alumno[] alumnos = null;
 	  }
 	  public String edit() {
 	    AlumnosService service;
+	    
 	    try {
 	      // Acceso a la implementacion de la capa de negocio 
 	      // a través de la factoría
 	      service = Factories.services.createAlumnosService();
 	      //Recargamos el alumno en la tabla de la base de datos por si hubiera cambios.
-	      alumno = service.findById(alumno.getId());
+	      alumno = (BeanAlumno) service.findById(alumno.getId());	      
 	      return "exito";
 	    } catch (Exception e) {
 	       e.printStackTrace();  
@@ -103,7 +104,7 @@ private Alumno[] alumnos = null;
 		  return "volver";
 	  }
 	  
-	  public String baja() {
+	  public String baja(Alumno alumno) {
 		    AlumnosService service;
 		    try {
 		      // Acceso a la implementacion de la capa de negocio 
