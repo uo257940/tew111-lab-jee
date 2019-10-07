@@ -27,10 +27,10 @@
 			</p:menubar>
 
 			<p:panelGrid columns="2">
-  #{msgs.nombre}		     <p:inputText value="#{controller.alumno.nombre}" />
-  #{msgs.apellidos}  <p:inputText value="#{controller.alumno.apellidos}" />
- #{msgs.userid}     <p:inputText value="#{controller.alumno.iduser}" />
-  #{msgs.correo}     <p:inputText value="#{controller.alumno.email}" />
+  #{msgs.nombre}		     <p:inputText value="#{alumno.nombre}" />
+  #{msgs.apellidos}  <p:inputText value="#{alumno.apellidos}" />
+ #{msgs.userid}     <p:inputText value="#{alumno.iduser}" />
+  #{msgs.correo}     <p:inputText value="#{alumno.email}" />
 			</p:panelGrid>
 			<h:commandButton value="#{msgs.botonSalvar}"
 				action="#{controller.salva}" />

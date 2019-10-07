@@ -28,7 +28,7 @@
 				</f:facet>
 			</p:menubar>
 
-			<p:dataTable var="alumno" value="#{controller.alumnos}" border="1">
+			<p:dataTable var="valumno" value="#{controller.alumnos}" border="1">
 				<p:column>
 					<f:facet name="header">#{msgs.tablaNombre}</f:facet>#{alumno.nombre}</p:column>
 				<p:column>
@@ -39,7 +39,7 @@
 					<f:facet name="header">#{msgs.tablaCorreo}</f:facet>#{alumno.email}</p:column>
 				<p:column>
 					<f:facet name="header">#{msgs.tablaBaja}</f:facet>
-					<h:commandLink action="#{controller.baja}" type="submit"
+					<h:commandLink action= "#{controller.baja(valumno)}" type="submit"
 						value="#{msgs.enlaceBaja}" immediate="true">
 						<f:setPropertyActionListener target="#{controller.alumno}"
 							value="#{alumno}" />
@@ -47,10 +47,9 @@
 				</p:column>
 				<p:column>
 					<f:facet name="header">#{msgs.tablaEditar}</f:facet>
-					<h:commandLink action="editar" type="submit"
+					<h:commandLink action="editar" actionListener= "#{alumno.setAlumno(valumno)}"  type="submit"
 						value="#{msgs.enlaceEditar}" immediate="true">
-						<f:setPropertyActionListener target="#{controller.alumno}"
-							value="#{alumno}" />
+			
 					</h:commandLink>
 				</p:column>
 			</p:dataTable>
