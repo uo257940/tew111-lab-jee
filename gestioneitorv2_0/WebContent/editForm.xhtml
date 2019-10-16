@@ -23,7 +23,8 @@
  #{msgs.tituloOperacionListado}
  </ui:define>
 			<ui:define name="cuerpo">
-				<h:form>
+				<h:form id="form-principal">
+					<ui:include src="/snippets/form-alumno.xhtml" />
 					<p:menubar>
 						<p:menuitem action="#{controller.volver}"
 							value="#{msgs.enlaceCasa}" immediate="true">
@@ -78,6 +79,9 @@
 				</h:form>
 			</ui:define>
 			<ui:define name="pie">
+				<h:form id="form-pie">
+					<ui:include src="/snippets/pie-casa.xhtml" />
+				</h:form>
 			</ui:define>
 		</ui:composition>
 	</h:body>
