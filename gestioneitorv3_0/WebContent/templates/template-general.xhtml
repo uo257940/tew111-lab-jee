@@ -5,7 +5,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-	
+
 <f:view locale="#{settings.locale}">
 	<h:head>
 		<title>#{msgs.tituloHead}</title>
@@ -33,14 +33,13 @@
 					<p:menuitem value="#{msgs.enlaceAlta}" action="alta"
 						actionListener="#{alumno.iniciaAlumno}" />
 				</p:submenu>
-				<f:facet name="options">
-					<h:commandLink value="#{msgs.enlaceIdiomaES}"
-						actionListener="#{settings.setSpanish}">
-					</h:commandLink>
-					<h:commandLink value="#{msgs.enlaceIdiomaEN}"
-						actionListener="#{settings.setEnglish}">
-					</h:commandLink>
-				</f:facet>
+				<p:submenu style="float:right" label="#{msgs.textoIdioma}"
+					icon="ui-icon-document">
+					<p:menuitem value="#{msgs.enlaceIdiomaES}"
+						actionListener="#{settings.setSpanish}" update="@all" />
+					<p:menuitem value="#{msgs.enlaceIdiomaEN}"
+						actionListener="#{settings.setEnglish}" update="@all" />
+				</p:submenu>
 			</p:menubar>
 
 		</h:form>
