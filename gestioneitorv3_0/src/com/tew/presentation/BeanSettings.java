@@ -17,7 +17,7 @@ public class BeanSettings implements Serializable {
 	private static final Locale SPANISH = new Locale("es");
 	private Locale locale = new Locale("es");
 
-	// uso de inyección de dependencia
+	// uso de inyecciÃ³n de dependencia
 	@ManagedProperty(value = "#{alumno}")
 	private BeanAlumno alumno;
 
@@ -30,10 +30,10 @@ public class BeanSettings implements Serializable {
 	}
 
 	public Locale getLocale() {
-		// Aqui habria que cambiar algo de código para coger locale del
+		// Aqui habria que cambiar algo de cÃ³digo para coger locale del
 		// navegador
 		// la primera vez que se accede a getLocale(), de momento dejamos como
-		// idioma de partida “es”
+		// idioma de partida â€œesâ€�
 		return (locale);
 	}
 
@@ -64,14 +64,14 @@ public class BeanSettings implements Serializable {
 	// Se inicia correctamente el Managed Bean inyectado si JSF lo hubiera
 	// creado
 	// y en caso contrario se crea.
-	// (hay que tener en cuenta que es un Bean de sesión)
+	// (hay que tener en cuenta que es un Bean de sesiÃ³n)
 
-	// Se usa @PostConstruct, ya que en el contructor no se sabe todavía si
+	// Se usa @PostConstruct, ya que en el contructor no se sabe todavÃ­a si
 	// el MBean ya estaba construido y en @PostConstruct SI.
 	@PostConstruct
 	public void init() {
 		System.out.println("BeanSettings - PostConstruct");
-		// Buscamos el alumno en la sesión. Esto es un patrón factoría
+		// Buscamos el alumno en la sesiÃ³n. Esto es un patrÃ³n factorÃ­a
 		// claramente.
 		alumno = (BeanAlumno) FacesContext.getCurrentInstance()
 				.getExternalContext().getSessionMap().get(new String("alumno"));
@@ -85,7 +85,7 @@ public class BeanSettings implements Serializable {
 		}
 	}
 
-	// Es sólo a modo de traza.
+	// Es sÃ³lo a modo de traza.
 	@PreDestroy
 	public void end() {
 		System.out.println("BeanSettings - PreDestroy");

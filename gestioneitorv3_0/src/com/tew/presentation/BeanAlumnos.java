@@ -149,6 +149,7 @@ public class BeanAlumnos implements Serializable{
 	         System.out.println("BeanAlumnos - PreDestroy");
 	     }
 
+
 	}
 
 
