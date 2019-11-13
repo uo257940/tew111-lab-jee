@@ -4,7 +4,11 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "alumno")
-public class Alumno {
+public class Alumno  implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Long id;
 	private String nombre;
 	private String apellidos;
@@ -17,7 +21,7 @@ public class Alumno {
 		this.id = id; this.nombre = nombre; this.apellidos = apellidos;
 		this.iduser = iduser; this.email = email;
 	}
-	
+
 	@XmlElement
 	public String getNombre() {
 		return nombre;
@@ -50,7 +54,7 @@ public class Alumno {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	@XmlElement
 	public void setId(Long id) {
 		this.id = id;

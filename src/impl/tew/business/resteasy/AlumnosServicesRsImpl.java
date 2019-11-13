@@ -1,4 +1,4 @@
-package impl.com.tew.business.resteasy;
+package impl.tew.business.resteasy;
 import java.util.List;
 import com.tew.business.resteasy.AlumnosServicesRs;
 import com.tew.business.exception.EntityAlreadyExistsException;
@@ -7,7 +7,7 @@ import com.tew.model.Alumno;
 import impl.tew.business.classes.*;
 public class AlumnosServicesRsImpl implements AlumnosServicesRs {
 	@Override
-	public List<Alumno> getAlumnos() throws Exception   {
+	public List<Alumno> getAlumnos() throws Exception {
 		return new AlumnosListado().getAlumnos();
 	}
 	@Override
