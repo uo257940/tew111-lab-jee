@@ -1,4 +1,3 @@
-//Clase que contiene el Modelo de la aplicación.
 function Model(){
 //	Lista de alumnos.
 	this.tbAlumnos = null;
@@ -44,3 +43,12 @@ this.find = function(id_alumno) {
 	var alumno = this.tbAlumnos.find(checkAlumno);
 	return alumno;
 }
+
+
+$(function() {
+//	Creamos el modelo con los datos y la conexión al servicio web.
+	var model = new Model();
+	model.load();
+});
+
+
