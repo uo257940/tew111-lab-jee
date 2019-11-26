@@ -90,6 +90,16 @@ this.loadAlumnoInForm = function(alumno) {
 	$("#iduser").focus(); // Ponemos el foco en el campo Nombre.
 }
 
+This.getIdAlumno = function(celda) {
+	// Accedemos a la fila que está por encima de esta celda
+	// (closest('tr'))y despues obtenemos todas las celdas de esa fila
+	// (find('tr')) y
+	// nos quedamos con la segunda (get(1)) que es la contiene el "id" del
+	// alumno.
+	var id_alumno = parseInt(celda.closest('tr').find('td').get(1).innerHTML);
+	return id_alumno;
+}
+
 $(function() {
 //	Creamos el modelo con los datos y la conexión al servicio web.
 	var model = new Model();
