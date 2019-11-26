@@ -80,6 +80,15 @@ this.loadAlumnoFromForm = function() {
 	return alumno;
 }
 
+this.loadAlumnoInForm = function(alumno) {
+	// Pintamos los datos alumnos sobre el formularios de alta/edición
+	$("#id").val(alumno.id);
+	$("#iduser").val(alumno.iduser);
+	$("#nombre").val(alumno.nombre);
+	$("#apellidos").val(alumno.apellidos);
+	$("#email").val(alumno.email);
+	$("#iduser").focus(); // Ponemos el foco en el campo Nombre.
+}
 
 $(function() {
 //	Creamos el modelo con los datos y la conexión al servicio web.
