@@ -19,13 +19,13 @@ this.add = function(alumno) {
 //Actualización de un alumno existente: PENDIENTE DE IMPLEMENTAR
 this.edit = function(alumno) {
 	AlumnosServicesRS.updateAlumno({
-		$entity : alumno,
+		$entity : alumno,	
 		$contentType: "application/json"
 	});
 	this.load();
-	
+
 }
-//Eliminación un alumno existente
+//Eliminación un alumno exist	ente
 this.remove = function(id_alumno) {
 //	Llamamos al servicio de borrado de alumno
 	AlumnosServicesRs.deleteAlumno({
@@ -42,6 +42,30 @@ this.find = function(id_alumno) {
 //	seleccionado
 	var alumno = this.tbAlumnos.find(checkAlumno);
 	return alumno;
+}
+
+function View(){
+	this.list = function (lista) {} // PENDIENTE DE IMPLEMENTAR
+	this.loadAlumnoFromForm = function () {} // PENDIENTE DE IMPLEMENTAR
+	this.loadAlumnoInForm = function (alumno) {} // PENDIENTE DE IMPLEMENTAR
+	this.getIdAlumno = function(celda) {} // PENDIENTE DE IMPLEMENTAR
+};
+
+this.list = function(lista) {
+	$("#tblList").html("");
+	$("#tblList").html( "<thead>" + "<tr>" + "<th></th>"
+			+ "<th>ID</th>" + "<th>IDUser</th>" + "<th>Nombre</th>"
+			+ "<th>Apellidos</th>" + "<th>Email</th>" + "</tr>"
+			+ "</thead>" + "<tbody>" + "</tbody>");
+	for ( var i in lista) {
+		var alumno = lista[i];
+		$("#tblList tbody").append("<tr> <td>"
+				+ "<img src='icons/edit.png' class='btnEdit'/>"
+				+ "<img src='icons/delete.png' class='btnDelete'/> </td>"
+				+ "<td>" + alumno.id + "</td>" + "<td>" + alumno.iduser + "</td>"
+				+ "<td>" + alumno.nombre + "</td>" + "<td>" + alumno.apellidos + "</td>"
+				+ "<td>" + alumno.email + "</td></tr>");
+	}
 }
 
 
